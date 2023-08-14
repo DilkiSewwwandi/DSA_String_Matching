@@ -1,4 +1,4 @@
-**KMP String Matching Algorithm**
+**KMP String Matching Algorithm and Regular Expressions**
 
 1. **How to Run the Program:**
     - Create the text file inside the foldr where main.c is placed( inside 21001855 folder) 
