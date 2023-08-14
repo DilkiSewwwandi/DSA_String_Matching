@@ -1,0 +1,41 @@
+ Knuth-Morris-Pratt Algorithm Explanation
+
+In this solution, I ahve aimed to efficiently find and locate occurrences of a given pattern within a text using the Knuth-Morris-Pratt (KMP) string-matching algorithm. The code provided demonstrates how it is achieved, focusing on key aspects and design choices. 
+
+Selection of String-Matching Algorithm:
+
+I chose the Knuth-Morris-Pratt (KMP) algorithm for string matching due to its efficiency in handling repetitive patterns. KMP takes advantage of the information in the pattern itself to avoid unnecessary comparisons, making it a good choice for scenarios where the pattern is repeated within the text.
+
+The main function acts as the entry point of the program. It reads the input pattern from "pattern1.txt" and iterates through each line of "text1.txt", searching for occurrences of the pattern.
+
+
+
+KMP Algorithm =>
+
+The KMP algorithm begins by pre-processing the pattern to generate a Longest Prefix Suffix (LPS) array. This array assists in determining how far to backtrack in case of a mismatch, thus optimizing the search process. The function prefix generates the LPS array for a given pattern.
+
+In the program, kmp function implements the core KMP algorithm. It maintains a pointer j to the current index in the pattern and a variable s to count occurrences. For each character in the text, if the characters at j in the pattern and i in the text match, j is incremented. If j reaches the length of the pattern, an occurrence is found, and relevant details are appended to the "output.txt" file. In case of a mismatch, the LPS array guides the backtracking to efficiently continue the search.
+
+
+
+Wildcard Character Handling =>
+
+The solution also addresses wildcard characters represented by '.' in the pattern. The function dotpattern replaces the wildcard with each possible character (both lowercase and uppercase letters), and then calls the kmp function to perform matching with the modified pattern.
+
+
+
+Handling Newlines =>
+
+Before performing any operations, the code ensures that newlines are removed from the end of each line read from the text file using strcspn.
+
+
+
+Output File Management=>
+
+The "output.txt" file is used to store the occurrences found in the text. It is created or overwritten at the beginning of the program's execution and appended to when matches are discovered.
+
+
+
+Conclusion:
+
+In conclusion, this solution effectively uses the KMP algorithm to perform efficient string matching, with a focus on handling wildcard characters and newline formatting. The code follows a structured approach and incorporates comments to highlight key components. The choice of KMP algorithm, alongside the efficient handling of wildcard characters, contributes to the overall effectiveness of the solution.
