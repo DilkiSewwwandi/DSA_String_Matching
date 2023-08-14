@@ -1,0 +1,3 @@
+Found Pattern in Line: 1 Index: 0
+Found Pattern in Line: 1 Index: 4
+Found Pattern in Line: 1 Index: 8
